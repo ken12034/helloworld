@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<link href="css/style.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="js/control.js"></script>
+	<meta charset=utf-8 />
+	<title>ng-Angular</title>
+</head>
+<body>
+	<div ng-controller="checkBoxControl">
+	  <input type="checkbox" ng-model="confirmed" ng-change="change()"/>
+		{{ counter }}
+    <br/>
+		for: {{ forTEST }}
+		<br/>
+
+		<select ng-options="size as size.counter for size in sizes"
+		ng-model="item" ng-change="update()">
+		</select>
+		<br />
+		{{item.counter}}
+
+
+  </div>
+	<div ng-controller="Ctrl">
+		<h3>ng-include</h3>
+				<select ng-model="template" ng-options="t.name for t in templates">
+					 <option value="">(blank)</option>
+				</select>
+				url of the template: <tt>{{template.url}}</tt>
+        <hr/>
+				<div ng-include="template.url"></div>
+
+	</div>
+</body>
+</html>
